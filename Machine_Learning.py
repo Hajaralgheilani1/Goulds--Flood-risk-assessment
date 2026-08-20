@@ -174,9 +174,6 @@ nn_prediction = model_nn.predict(X_test)
 
 model_rf = RandomForestRegressor(
     n_estimators=200,
-    max_depth=None,
-    min_samples_split=2,
-    min_samples_leaf=1,
     random_state=42,
     n_jobs=-1
 )
@@ -188,7 +185,7 @@ model_rf.fit(X_train, y_train)
 rf_prediction = model_rf.predict(X_test)
 
 # Create a baseline prediction
-baseline_prediction = data["gage_lag1"].iloc[split:]
+baseline_prediction = data["gage height (ft)"].iloc[split:]
 
 # Evalute functions
 def evaluate_model(name, actual, prediction):
