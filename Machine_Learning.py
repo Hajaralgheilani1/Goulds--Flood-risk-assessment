@@ -17,7 +17,7 @@ from sklearn.metrics import (
 
 
 # Import the combined data
-data = pd.read_csv(r"C:\Users\jxjh1\Downloads\IA1\combined.csv")
+data = pd.read_csv(r"combined.csv")
 
 # Convert date column to a date format
 data["date"] = pd.to_datetime(data["date"])
@@ -407,7 +407,7 @@ plt.plot(
     data["date"].iloc[split:],
     y_test.values,
     label="Actual",
-    color="orange",
+    color="blue",
     linewidth=1
 )
 
@@ -415,7 +415,7 @@ plt.plot(
     data["date"].iloc[split:],
     nn_prediction,
     label="Neural Network",
-    color="blue",
+    color="orange",
     linewidth=1
 )
 
